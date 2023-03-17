@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <uses-feature android:name="android.hardware.usb.accessory"/>
 
@@ -16,7 +17,8 @@
             android:directBootAware="true"
             android:name=".StartAccessoryActivity"
             android:excludeFromRecents="true"
-            android:theme="@android:style/Theme.Dialog">
+            android:theme="@android:style/Theme.Dialog"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.hardware.usb.action.USB_ACCESSORY_ATTACHED"/>
             </intent-filter>
@@ -37,7 +39,8 @@
             android:directBootAware="true"
             android:name=".TetherService"
             android:permission="android.permission.BIND_VPN_SERVICE"
-            android:process=":separate">
+            android:process=":separate"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.net.VpnService"/>
             </intent-filter>
