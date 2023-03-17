@@ -2,7 +2,7 @@
 
 <resources>
     <usb-accessory
-        manufacturer="Konstantin Menyaev"
-        model="SimpleRT"
-        version="1.1"/>
+        manufacturer="DrKumo Inc"
+        model="VpnRT"
+        version="1.0" />
 </resources>
