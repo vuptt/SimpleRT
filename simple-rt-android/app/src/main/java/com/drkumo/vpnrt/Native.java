@@ -16,12 +16,12 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.viper.simplert;
+package com.drkumo.vpnrt;
 
 public class Native {
-    static native void start(int tun_fd, int acc_fd);
-    static native void stop();
-    static native boolean is_running();
+    public static native void start(int tun_fd, int acc_fd);
+    public static native void stop();
+    public static native boolean is_running();
 
     static {
         System.loadLibrary("simplertjni");

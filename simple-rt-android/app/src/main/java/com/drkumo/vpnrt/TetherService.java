@@ -16,7 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.viper.simplert;
+package com.drkumo.vpnrt;
 
 import android.annotation.TargetApi;
 import android.content.BroadcastReceiver;
@@ -32,16 +32,19 @@ import android.net.Network;
 import android.net.VpnService;
 import android.os.Build;
 import android.os.ParcelFileDescriptor;
-import android.support.v4.app.NotificationCompat;
-import android.support.v4.app.NotificationManagerCompat;
 import android.util.Log;
 import android.widget.Toast;
+
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
+
+import com.drkumo.vpnrt.R;
 
 import java.util.List;
 
 public class TetherService extends VpnService {
     private static final String TAG = "TetherService";
-    private static final String ACTION_USB_PERMISSION = "com.viper.simplert.TetherService.action.USB_PERMISSION";
+    private static final String ACTION_USB_PERMISSION = "com.drkumo.vpnrt.TetherService.action.USB_PERMISSION";
     private static final int FOREGROUND_NOTIFICATION_ID = 16;
 
     private final BroadcastReceiver mUsbReceiver = new BroadcastReceiver() {

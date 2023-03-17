@@ -92,7 +92,7 @@ void *thread_proc(void *arg)
 }
 
 JNIEXPORT void JNICALL
-Java_com_viper_simplert_Native_start(JNIEnv *env, jclass type, jint tun_fd, jint acc_fd)
+Java_com_drkumo_vpnrt_Native_start(JNIEnv *env, jclass type, jint tun_fd, jint acc_fd)
 {
     LOGV("%s: tun_fd = %d, acc_fd = %d", __func__, tun_fd, acc_fd);
 
@@ -116,7 +116,7 @@ Java_com_viper_simplert_Native_start(JNIEnv *env, jclass type, jint tun_fd, jint
 }
 
 JNIEXPORT void JNICALL
-Java_com_viper_simplert_Native_stop(JNIEnv *env, jclass type)
+Java_com_drkumo_vpnrt_Native_stop(JNIEnv *env, jclass type)
 {
     LOGV(__func__);
 
@@ -127,7 +127,7 @@ Java_com_viper_simplert_Native_stop(JNIEnv *env, jclass type)
 }
 
 JNIEXPORT jboolean JNICALL
-Java_com_viper_simplert_Native_is_1running(JNIEnv *env, jclass type)
+Java_com_drkumo_vpnrt_Native_is_1running(JNIEnv *env, jclass type)
 {
     LOGV(__func__);
     return module.is_started;
