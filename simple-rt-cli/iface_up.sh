@@ -34,7 +34,11 @@ function linux_start {
     ifconfig $TUN_DEV $HOST_ADDR/$TUNNEL_CIDR up
     sysctl -w net.ipv4.ip_forward=1 > /dev/null
     iptables -I FORWARD -j ACCEPT -m comment --comment "${comment}"
-    iptables -t nat -I POSTROUTING -s $TUNNEL_NET/$TUNNEL_CIDR -o $LOCAL_INTERFACE -j MASQUERADE -m comment --comment "${comment}"
+    output_interface_option=""
+    if [ -n "$LOCAL_INTERFACE" ]; then
+      output_interface_option="-o $LOCAL_INTERFACE"
+    fi
+    iptables -t nat -I POSTROUTING -s $TUNNEL_NET/$TUNNEL_CIDR $output_interface_option -j MASQUERADE -m comment --comment "${comment}"
 }
 
 function linux_stop {
